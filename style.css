@@ -1,0 +1,143 @@
+/*References are in the HTML Document*/
+h1
+{
+    font-family: "Fira Code", sans-serif;
+}
+p
+{
+    color: white;
+}
+span
+{
+    color: #133b68;
+}
+li {
+    padding-bottom: 1.5em;
+}
+
+body{
+    background-color: #000000;
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section
+{
+    background-color: #133b68;
+    width: 640px;
+    border-radius: 0.5rem;
+}
+
+.col {
+    display: block;
+    float:left;
+    text-align: center;
+
+}
+
+.col:first-child { margin-left: 3px; }
+
+
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group {
+    clear: both;
+    padding: 20px;
+    margin: 0 auto;
+}
+data
+{
+    display: block;
+}
+.group.header
+{
+    color: #ec0d21;
+    width: 640px;
+    background-color: #0b104b;
+}
+
+.span_1_of_4 {
+    width: 24%;
+    height: 75px;
+    padding-top: 40px;
+    font-size: 30px;
+    margin: 2px;
+    border-radius: .25rem;
+    border: 1px solid #dee2e6;
+    color: #1515bf;
+}
+.newBorder{
+    animation-name: stretch;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 1ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+
+@keyframes stretch {
+    0% {
+        transform: scale(.9);
+        background-color: #dcd65a;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.bg_2_4{
+    background-color: #fae59b;
+
+}
+.bg_8{
+    background-color: #29e515;
+}
+.bg_16{
+    background-color: #b3acf6;
+}
+.bg_32{
+    background-color: #ead338;
+}
+.bg_64{
+    background-color: #15cece;
+}
+.bg_128{
+    background-color: #1a45c1;
+}
+.bg_256{
+    background-color: rgb(226, 77, 36);
+}
+.bg_high{
+    background-color: #000000;
+}
+.newBorder2048{
+    animation-name: stretch2048;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+label
+{
+    display: block;
+}
+@keyframes stretch2048
+{
+    0% {
+        transform: scale(.9);
+        background-color: rgb(222, 21, 132);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

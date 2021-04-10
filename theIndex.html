@@ -1,0 +1,102 @@
+<!--References: https://gabrielecirulli.github.io/2048/ (Official 2048 game)
+                Week 5 Code (companies_firestore directory)-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>2048 using Vue JS</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="color: white" align="center">2048 using Vue</h1>
+    <h4 style="color: #ffffff" align="center">Made by Vishal Madhav</h4>
+    <h4 style="color: azure"> Rules: Move the tiles using the arrow keys on the keyboard. Every time you move one, another tile should
+        pop up in a random manner anywhere in the box. When two tiles with the same number on them collide with one
+        another as you move them, they will merge into one tile with the sum of the numbers written on them initially.
+        You win the game if the sum equals to 2048. Otherwise, you lose the game where there are no moves left on the
+        board.
+    </h4>
+
+</header>
+<div class="container" id="gameON">
+    <div class=" group header">
+
+        <h4 style="color: #f30404">NOTE: If you can't move the tiles anymore with the arrow keys, then the game
+            is automatically over.
+            Whatever score you get below is your final. </h4>
+        <h4 style="color: white">Once you get that final score, enter your first name, the score you got, and the date
+            you got that score (Example shown inside the text fields)  </h4>
+
+
+        <h2>Score: {{current_score}}</h2>
+        <!--Rather than using the refresh page in Chrome, I decided to add a button below the 2048 grid that can refresh the page itself-->
+        <h3 style="color: white">Want to play again or start over? Click the button below to restart the game:</h3>
+        <a href="theIndex.html"><button title="Clicking this button will refresh the page and restart the
+        game">Restart the game</button></a>
+
+    </div>
+    <div class="section group rounded">
+        <template v-for="(array, i) in grid">
+            <template v-for="(cell, j) in array">
+                <div class="col span_1_of_4" v-bind:ref="'counter_'+i+'_'+ j">
+                    <span v-if="cell == 0"></span>
+                    <span v-else>{{cell}}</span>
+                </div>
+            </template>
+        </template>
+    </div>
+
+    <h2 style="color: white">Enter the final score that you get here. </h2>
+
+    <form id="data">
+        <label style="color: white">First name:</label>
+
+        <input alt="First name text field" title="Enter only your first name in this text box" type="text" name="name"
+               placeholder="Example: Joe">
+        <label style="color: white">Score:</label>
+
+        <input alt="Score text field"  type="text" title="Enter the final score you got in this text box" name="points"
+               placeholder="Example: 134">
+        <label style="color: white">Date:</label>
+
+        <input alt="Date text field"  type="text" title="Enter the date that you played this game in this text box."
+               name="date" placeholder="Example: 01/01/2000">
+        <button class="btn" onclick="dataSubmit()">Add</button>
+    </form>
+    <br>
+
+
+    <h2 style="color: white"> High score data:</h2>
+
+    <ul id="data_ul" class="collection"></ul>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+</script>
+
+</body>
+
+<script src="main.js"></script>
+<footer>
+
+    <!--The link attached to the footer below gave me a good idea on how to structure the program.
+      There are also other references on top of this HTML document-->
+    <p title="I put a copyright here so you would know where I got most of my code from while doing the 2048 program">
+        &copy; 2021 from<a style="color:deepskyblue;" target="_blank" href="https://www.youtube.com/watch?v=JSn-DJU8qf0">
+        The Coding Train
+    </a>
+    <p style=color:whitesmoke>Edited and re-created by Vishal Madhav</p>
+
+</footer>
+</html>
