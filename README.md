@@ -3,6 +3,7 @@ This 2048 Vue.js app is used to create the popular 2048 game with a Google Fires
 
 # References: 
 The Coding Train: https://www.youtube.com/watch?v=JSn-DJU8qf0
+
 Google Firestore: https://cloud.google.com/firestore/docs
 
         
